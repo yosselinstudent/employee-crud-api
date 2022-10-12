@@ -1,0 +1,23 @@
+{
+  "name": "employee-crud-api",
+  "version": "1.0.0",
+  "description": "Aplicación CRUD con API en NODEjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yosselinstudent/employee-crud-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yosselinstudent/employee-crud-api/issues"
+  },
+  "homepage": "https://github.com/yosselinstudent/employee-crud-api#readme",
+  "devDependencies": {
+    "eslint": "^8.25.0"
+  }
+}
