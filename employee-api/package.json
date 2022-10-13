@@ -2,7 +2,7 @@
   "name": "employee-crud-api",
   "version": "1.0.0",
   "description": "Aplicación CRUD con API en NODEjs",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "dev": "nodemon",
     "lint": "eslint --ext .js -f ./node_modules/eslint-friendly-formatter . --fix",
