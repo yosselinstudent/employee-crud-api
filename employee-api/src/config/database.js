@@ -15,7 +15,7 @@ const pool=new Pool({
     connectionString: process.env.DATABASE_URL
 });
 
-pool.on('error',(err,client)=>{
+pool.on('error',(err)=>{
     console.log('Ha ocurrido un error en la conexion con el servidor', err);
     process.exit(-1);
 });
