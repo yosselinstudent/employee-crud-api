@@ -22,7 +22,14 @@ exports.createEmployee=async(req,res)=>{
 };
 
 // ==> Metodo responsable de listar los Employees
-exports.listAllEmployees=async(req,res)=>{
+exports.listAllEmployee=async(req,res)=>{
     const response=await db.query('SELECT * FROM employee ORDER BY name ASC');
+    res.status(200).send(response.rows);
+};
+
+//Metodo responsable para listar un determinado employee por id
+exports.findEmployeeById=async(req,res)=>{
+    const employeeId=req.params.id;
+    const response=await db.query('SELECT * FROM employee WHERE employee_id = $1', [employeeId]);
     res.status(200).send(response.rows);
 };

@@ -15,4 +15,7 @@ route.post('/employees', employeeController.createEmployee);
 // ==> Ruta responsable de listar todos los Colaboradores: (GET): localhost:3000/api/employee
 route.get('/employees', employeeController.listAllEmployee);
 
+//==> Ruta responsable para listar un determinado colaborados por id
+route.get('/employees/:id', employeeController.findEmployeeById);
+
 module.exports=route;
