@@ -9,7 +9,7 @@ const db=require('../config/database');
 // ==> Metodo responsable de crear un nuevo employee
 exports.createEmployee=async(req,res)=>{
     const { name, job_role, salary, date_of_birth, employee_resgistration } = req.body;
-    await db.query(
+     await db.query(
         "INSERT INTO employee (name, job_role, salary, date_of_birth, employee_resgistration) VALUES ($1, $2, $3, $4, $5)",
         [name, job_role, salary, date_of_birth, employee_resgistration]
     );
@@ -19,4 +19,10 @@ exports.createEmployee=async(req,res)=>{
             employee:{ name, job_role, salary, date_of_birth, employee_resgistration }
         },
     });
+};
+
+// ==> Metodo responsable de listar los Employees
+exports.listAllEmployees=async(req,res)=>{
+    const response=await db.query('SELECT * FROM employee ORDER BY name ASC');
+    res.status(200).send(response.rows);
 };

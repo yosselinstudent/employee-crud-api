@@ -11,4 +11,8 @@ const employeeController= require('../controllers/employee-controllers');
 
 // ==> Rutas responsable de crear un nuevo Colaborador(a): (POST): localhost:3000/api/employee
 route.post('/employees', employeeController.createEmployee);
+
+// ==> Ruta responsable de listar todos los Colaboradores: (GET): localhost:3000/api/employee
+route.get('/employees', employeeController.listAllEmployee);
+
 module.exports=route;
