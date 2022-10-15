@@ -18,4 +18,7 @@ route.get('/employees', employeeController.listAllEmployee);
 //==> Ruta responsable para listar un determinado colaborados por id
 route.get('/employees/:id', employeeController.findEmployeeById);
 
+// ==> Ruta responsable de actualizar un determinado colaborador
+route.put('/employees/:id', employeeController.updateEmployeeById);
+
 module.exports=route;
