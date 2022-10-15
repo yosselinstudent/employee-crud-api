@@ -52,3 +52,12 @@ exports.updateEmployeeById=async(req,res)=>{
         { message: 'Employee actualizado exitosamente' }
     );
 };
+
+//Metodo responsable de eliminar un determinado employee por id
+exports.deleteEmployeeById=async(req, res)=>{
+const employeeId =req.params.id;
+await db.query('DELETE FROM employee WHERE employee_id=$1',[employeeId]);
+
+res.status(200).send({ message: 'Employee eliminado exitosamente' });
+};
+

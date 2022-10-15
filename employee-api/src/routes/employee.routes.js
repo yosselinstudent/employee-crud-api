@@ -21,4 +21,7 @@ route.get('/employees/:id', employeeController.findEmployeeById);
 // ==> Ruta responsable de actualizar un determinado colaborador
 route.put('/employees/:id', employeeController.updateEmployeeById);
 
+// ==> Ruta responsable para eliminar un determinado colaborador por id
+route.delete('/employees/:id', employeeController.deleteEmployeeById);
+
 module.exports=route;
