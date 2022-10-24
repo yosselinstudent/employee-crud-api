@@ -20,7 +20,8 @@
     "@angular/router": "^14.2.0",
     "@fortawesome/angular-fontawesome": "^0.11.1",
     "bootstrap": "^5.2.2",
-    "rxjs": "~7.5.0",
+    "ng2-slim-loading-bar": "^4.0.0",
+    "rxjs": "^7.5.7",
     "sweetalert2": "^11.5.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
