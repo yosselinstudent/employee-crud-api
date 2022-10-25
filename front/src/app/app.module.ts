@@ -3,7 +3,7 @@ import ptBr from '@angular/common/locales/br';
 import { BrowserModule } from '@angular/platform-browser';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { ReactiveFormsModule } from '@angular/forms'
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,7 +26,8 @@ registerLocaleData(ptBr,'pt-BR');
     BrowserModule,
     AppRoutingModule,
     SlimLoadingBarModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [ {provide: LOCALE_ID, useValue:'pt-BR' }],
   bootstrap: [AppComponent]
