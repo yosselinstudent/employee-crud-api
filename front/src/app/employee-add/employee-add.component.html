@@ -1,26 +1,60 @@
 <div class="card">
     <div class="card-body">
-        <form >
+        <form [formGroup]="employeeForm" novalidate>
             <div class="form-group">
                 <label for="employee-name" class="font-weight-bold mb-2">Nombre del Colaborador</label>
-                <input type="text" class="form-control" placeholder="Nombre del Colaborador">
+                <input type="text" class="form-control" placeholder="Nombre del Colaborador" formControlName="employeeName" #employeeName>
+            </div>
+            <div *ngIf="employeeForm.controls['employeeName'].invalid 
+                && (employeeForm.controls['employeeName'].dirty 
+                || employeeForm.controls['employeeName'].touched)" class="alert alert-danger mt-2">
+                <div *ngIf="employeeForm.controls['employeeName'].errors?.['required']">
+                    El campo 'Nombre del Colaborador' es obligatorio
+                </div>
             </div>
             <div class="form-group">
                 <label for="jog-role" class="font-weight-bold mb-2 mt-2">Rol de Trabajo</label>
-                <input type="text" class="form-control" placeholder="Rol">
+                <input type="text" class="form-control" placeholder="Rol" formControlName="jobRole" #jobRole>
+            </div>
+            <div *ngIf="employeeForm.controls['jobRole'].invalid 
+                && (employeeForm.controls['jobRole'].dirty 
+                || employeeForm.controls['jobRole'].touched)" class="alert alert-danger mt-2">
+                <div *ngIf="employeeForm.controls['jobRole'].errors?.['required']">
+                    El campo 'Rol de trabajo' es obligatorio
+                </div>
             </div>
             <div class="form-group">
                 <label for="salary" class="font-weight-bold mb-2 mt-2">Salario</label>
-                <input type="text" class="form-control" placeholder="Salario">
+                <input type="number" class="form-control" placeholder="Salario" formControlName="salary" #salary>
+            </div>
+            <div *ngIf="employeeForm.controls['salary'].invalid 
+                && (employeeForm.controls['salary'].dirty 
+                || employeeForm.controls['salary'].touched)" class="alert alert-danger mt-2">
+                <div *ngIf="employeeForm.controls['salary'].errors?.['required']">
+                    El campo 'Salario' es obligatorio
+                </div>
             </div>
             <div class="form-group">
                 <label for="birth" class="font-weight-bold mb-2 mt-2">Cumpleaños</label>
-                <input type="date" class="form-control" placeholder="DD/MM/YYYY">
-               <!-- <input type="date" class="form-control" name="birth" [(ngModel)]="matterData.birth | date:'YYYY/MM/DD'"required>-->
+                <input type="date" class="form-control" placeholder="DD/MM/YYYY" formControlName="birth" #birth>
+            </div>
+            <div *ngIf="employeeForm.controls['birth'].invalid 
+                && (employeeForm.controls['birth'].dirty 
+                || employeeForm.controls['birth'].touched)" class="alert alert-danger mt-2">
+                <div *ngIf="employeeForm.controls['birth'].errors?.['required']">
+                    El campo 'Cumpleaños' es obligatorio
+                </div>
             </div>
             <div class="form-group">
                 <label for="employee-registration" class="font-weight-bold mb-2 mt-2">Registro del Colaborador</label>
-                <input type="text" class="form-control" placeholder="Registro del Colaborador">
+                <input type="text" class="form-control" placeholder="Registro del Colaborador" formControlName="employeeRegistration" #employeeRegistration>
+            </div>
+            <div *ngIf="employeeForm.controls['employeeRegistration'].invalid 
+                && (employeeForm.controls['employeeRegistration'].dirty 
+                || employeeForm.controls['employeeRegistration'].touched)" class="alert alert-danger mt-2">
+                <div *ngIf="employeeForm.controls['employeeRegistration'].errors?.['required']">
+                    El campo 'Registro del colaborador' es obligatorio
+                </div>
             </div>
         </form>
     </div>
