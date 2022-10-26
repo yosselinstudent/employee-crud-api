@@ -11,6 +11,8 @@ import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { EmployeeGetComponent } from './employee-get/employee-get.component';
 import { registerLocaleData } from '@angular/common';
+import { EmployeeService } from './service/employee.service'
+
 
 registerLocaleData(ptBr,'pt-BR');
 
@@ -29,7 +31,7 @@ registerLocaleData(ptBr,'pt-BR');
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ {provide: LOCALE_ID, useValue:'pt-BR' }],
+  providers: [EmployeeService, { provide: LOCALE_ID, useValue:'pt-BR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
