@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { FormGroup, FormBuilder, Validators } from '@angular/forms'
+import { EmployeeService } from '../service/employee.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-employee-add',
@@ -11,7 +11,7 @@ export class EmployeeAddComponent implements OnInit {
 
   employeeForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private employeeService: EmployeeService) {
     this.createForm();
    }
    createForm():void{
@@ -22,6 +22,10 @@ export class EmployeeAddComponent implements OnInit {
       birth:['',Validators.required],
       employeeRegistration:['',Validators.required]
     })
+   }
+
+   createNewEmployee(employeeName:any, jobRole: any, salary: any, birth: any, employeeRegistration: any){
+     this.employeeService.createNewEmployee(employeeName, jobRole, salary, birth, employeeRegistration);
    }
 
   ngOnInit(): void {
